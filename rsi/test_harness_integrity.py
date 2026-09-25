@@ -34,6 +34,13 @@ def write_trial(job_dir: Path, name: str) -> None:
 
 @patch.dict("os.environ", {"DEEPSEEK_API_KEY": "unit-test"})
 class RunIntegrityTest(unittest.TestCase):
+    def setUp(self) -> None:
+        # Identity checks need a benchmark revision, but must not depend on a
+        # materialized local task split.
+        manifest = patch.object(H, "load_manifest", return_value={"commit": "unit-test"})
+        manifest.start()
+        self.addCleanup(manifest.stop)
+
     def test_pier_job_resume_command_exists(self) -> None:
         if not H.VENV_PIER.is_file():
             self.skipTest("Pier is not installed in this checkout")

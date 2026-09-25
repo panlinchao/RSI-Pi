@@ -25,13 +25,12 @@ when you run it.
 
 The Python imports currently use `open_research_RSI` as the package name, so
 clone the repository into a directory with that name and run commands from its
-parent directory. A new run needs Python 3.12, Git, Docker, and a DeepSeek API
-key.
+parent directory. A new run needs Python 3.12, `uv`, Git, Docker, and a DeepSeek
+API key.
 
 ```bash
-git clone https://github.com/panlinchao/RSI-Pi.git open_research_RSI
-python3.12 -m venv open_research_RSI/.venv
-open_research_RSI/.venv/bin/python -m pip install -r open_research_RSI/requirements.txt
+uv venv --python python3.12 open_research_RSI/.venv
+uv pip install --python open_research_RSI/.venv/bin/python -r open_research_RSI/requirements.txt
 open_research_RSI/.venv/bin/python open_research_RSI/bench/fetch_ccbench.py
 docker build -t rsi-evolver:0.86.1 open_research_RSI/bench/evolver
 ```
