@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Regenerated benchmark data and runtime artifacts.
+bench/ccbench/
+bench/manifest.json
+bench/runs/
+rsi/evidence/
+rsi/versions/
+rsi/checkpoints/
+rsi/results/
+_defective-run-artifacts/
+vendor/
+papers/
+smoke/jobs/
+
+# Local credential files must never enter the public code repository.
+.env
+*.key

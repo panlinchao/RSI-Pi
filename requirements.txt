@@ -1,0 +1,2 @@
+# Python 3.12; all RSI driver imports beyond the standard library come from Pier.
+datacurve-pier==0.3.1
