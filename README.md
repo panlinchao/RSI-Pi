@@ -29,6 +29,7 @@ parent directory. A new run needs Python 3.12, `uv`, Git, Docker, and a DeepSeek
 API key.
 
 ```bash
+git clone https://github.com/panlinchao/RSI-Pi.git open_research_RSI
 uv venv --python python3.12 open_research_RSI/.venv
 uv pip install --python open_research_RSI/.venv/bin/python -r open_research_RSI/requirements.txt
 open_research_RSI/.venv/bin/python open_research_RSI/bench/fetch_ccbench.py
